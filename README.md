@@ -8,6 +8,7 @@ Una repository dove ci sono tutti gli esercizi del caravagna (forse)
 NB: ad ogni modifica bisogna re-compilare il file prima di runnarlo (in più il tasto run non serve più)
 
 ### esercitazione01/
+[soluzioni di Ciro](https://github.com/ciroantoniomami/SimulazioneNov2021/tree/main)
 - [x] ESERCIZIO 1
 
 Il punto tre si può pensare in modo diverso; ovvero mettere nell'array non i risultati della sommatoria, ma gli elementi che devono essere sommati fra di loro.
