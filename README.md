@@ -11,13 +11,19 @@ NB: ad ogni modifica bisogna re-compilare il file prima di runnarlo (in più il 
 [soluzioni di Ciro](https://github.com/ciroantoniomami/SimulazioneNov2021/tree/main)
 - [x] ESERCIZIO 1
 
+*Sommatoria*
+
 Il punto tre si può pensare in modo diverso; ovvero mettere nell'array non i risultati della sommatoria, ma gli elementi che devono essere sommati fra di loro.
 - [x] ESERCIZIO 2
+
+*Find in array per proprità*
 
 Soluzione leggermente diversa da quella di Ciro, ma niente di straordinario.
 
 Si può ancora pensare il modo per fare tutto in maniera ricorsiva.
 - [ ] ESERCIZIO 3
+
+*stringhe palindrome*
 
 Da capire cosa siano le stringhe e come funzionano
 
