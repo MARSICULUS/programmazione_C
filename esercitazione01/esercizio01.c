@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int fattoriale(int k)
 {
@@ -31,15 +32,38 @@ float sommatoria_ricorsiva(float x, int n)
     return (potenza(x, n) / (float)fattoriale(n)) + sommatoria_ricorsiva(x, n - 1);
 }
 
+float* array_somma(float x, int n)
+{
+    float* a = malloc(sizeof(float) * n);
+
+    for(int i = 0; i < n; i++)
+    {
+        a[i] = sommatoria_iterativa(x, i);
+    }
+
+    return a;
+}
+
 int main()
 {
     float x = 3.0;
 
+    /*
     for(int i = 0; i < 10; i++)
     {
         printf("sommatoria_iterativa: %f\n", sommatoria_iterativa(x, i));
         printf("sommatoria_ricorsiva: %f\n", sommatoria_ricorsiva(x, i));
     }
+    */
+
+    float* p;
+    p = array_somma(x, 10);
+
+    printf("[");
+    for(int i = 0; i < 10; i++)
+        printf("%.3f ", p[i]);
+    printf("]\n");
+    free(p);
 
     return 0;
 }
