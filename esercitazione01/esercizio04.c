@@ -11,6 +11,7 @@ int palindroma(char* str)
 {
     int flag = 1;
     int len_str = len(str, 0);
+    
     for(int i = 0; i < len_str; i++)
     {
         if(str[i] != str[len_str - i - 1])

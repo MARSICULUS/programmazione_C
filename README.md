@@ -21,14 +21,19 @@ Il punto tre si può pensare in modo diverso; ovvero mettere nell'array non i ri
 Soluzione leggermente diversa da quella di Ciro, ma niente di straordinario.
 
 Si può ancora pensare il modo per fare tutto in maniera ricorsiva.
-- [ ] ESERCIZIO 3
+- [x] ESERCIZIO 3
+
+*lunghezza stringa*
+
+len in maniera iterativa e ricorsiva
+
+Capire un attimo come inizializzare una stringa
+
+Prbabilmente c'è un altro modo ancora per scrivere len
+
+- [x] ESERCIZIO 4
 
 *stringhe palindrome*
-
-Da capire cosa siano le stringhe e come funzionano
-
-- [ ] ESERCIZIO 4
-
 
 - [ ] ESERCIZIO 5
 
