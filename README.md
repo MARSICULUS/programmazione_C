@@ -50,3 +50,7 @@ Si può migliorare con una "perla di algoritmica"
 
 - [ ] ESERCIZIO 8
 
+*succesione ricorsiva*
+
+
+
