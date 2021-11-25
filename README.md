@@ -41,7 +41,11 @@ Prbabilmente c'è un altro modo ancora per scrivere len
 - [ ] ESERCIZIO 6
 
 
-- [ ] ESERCIZIO 7
+- [x] ESERCIZIO 7
+
+*scansione proprietà in array*
+
+Si può migliorare con una "perla di algoritmica"
 
 
 - [ ] ESERCIZIO 8
