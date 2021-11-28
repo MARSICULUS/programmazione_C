@@ -48,9 +48,11 @@ Prbabilmente c'è un altro modo ancora per scrivere len
 Si può migliorare con una "perla di algoritmica"
 
 
-- [ ] ESERCIZIO 8
+- [x] ESERCIZIO 8
 
 *succesione ricorsiva*
 
+fatta in maniera ricorsiva, iterativa, analitica
 
+Ci sono due versioni iterative
 
