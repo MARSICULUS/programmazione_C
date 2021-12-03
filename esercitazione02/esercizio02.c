@@ -35,7 +35,7 @@ float sequenza_ite(int n)
     
     for(int i = 2; i <= n; i++)
     {
-        n_0 = (fibonazzi(n) + n_0) / 2;
+        n_0 = (fibonazzi(i) + n_0) / 2;
     }
 }
 
@@ -48,7 +48,7 @@ int main()
 
     printf("--------\n");
 
-    for(int i = 0; i < 10; i++)
+    for(int i = 0; i < 25; i++)
     {
         printf("%d:\n", i);
         printf("   %f\n", sequenza(i));
