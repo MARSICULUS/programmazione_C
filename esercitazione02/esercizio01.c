@@ -16,6 +16,8 @@ int cantor(int arr[], int f, int i, int l)
         return cantor(arr, f, i, m - 1);
 }
 
+
+//si può fare iterativa
 int main()
 {
     int arrayi[7] = {3, 4, 6, 8, 21, 33, 55};
