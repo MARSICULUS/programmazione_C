@@ -14,29 +14,93 @@ struct elemento
 typedef struct elemento ElementoDiLista;
 typedef ElementoDiLista* ListaDiElementi;
 
-//creare una lista
-void addT(ListaDiElementi l; int x)
+//-------------------------\
+//    pene                  |
+//-------------------------/
+
+//aggiungere un elemento in testa a una lista
+void addT(ListaDiElementi* testa, int x)
 {
-    ListaDiElementi nuovo;
+    ListaDiElementi nuovo = malloc(sizeof(ElementoDiLista));
     nuovo->info = x;
-    nuovo->next = l;
-    l = nuovo;
+    nuovo->next = *testa;
+    *testa = nuovo;
+}
+
+void addC(ListaDiElementi *l, int z)
+{
+    ListaDiElementi nuovo = malloc(sizeof(ElementoDiLista));
+    nuovo->info = z;
+    nuovo->next = NULL;
+
+    if(*l == NULL)
+        *l = nuovo;
+    else
+    {
+        //copia del puntatore
+        ListaDiElementi corr = *l;
+        
+        //corr scorre la lista
+        while(corr->next != NULL)
+            corr = corr->next;
+
+        //siamo all'ultimo elemento quindi questo punta a quello nuovo
+        corr->next = nuovo;
+    }
+}
+
+void add_prec_x(ListaDiElementi* l, int z, int x)
+{
+    ListaDiElementi nuovo = malloc(sizeof(ElementoDiLista));
+    nuovo->info = z;
+    
+    if((*l)->info == x)//   wtf WTF why
+    {
+        nuovo->next = *l;
+        *l = nuovo;
+    }
+    else
+    {
+        ListaDiElementi corr = malloc(sizeof(ElementoDiLista));
+
+        while((corr->next)->info != x)
+            corr = corr->next;
+        
+        nuovo->next = corr->next;
+        corr->next = nuovo;
+    }
+}
+
+void printLista(ListaDiElementi l)
+{
+    if(l != NULL)
+    {
+        printf("%d\n", l->info);
+        //printf("%p\n", l->next);
+        printLista(l->next);
+    }
+    else
+        printf("NULL\n");
+
 }
 
 int main()
 {
     //dichiarazione variabile
-    ListaDiElementi lista;
+    ListaDiElementi lista = NULL;
 
     //alloco memoria nello heap
-    lista = malloc(sizeof(ListaDiElementi));
+    //lista = malloc(sizeof(ListaDiElementi));
 
-    lista->info = 10;
-    printf("%d\n", (*lista).info);
-    (*lista).next = NULL;
-    (*lista).info = 4;
-    printf("%d\n", (*lista).info);
 
+    for(int i = 0; i < 10; i++)
+    {
+        addC(&lista, i);
+    }
+    printLista(lista);
+
+    add_prec_x(&lista, 69, 5);
+    printLista(lista);
 
 
     return 0;
