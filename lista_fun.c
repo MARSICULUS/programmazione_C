@@ -49,11 +49,12 @@ void addC(ListaDiElementi *l, int z)
     }
 }
 
+//agginge il valore z prima del valore x
 void add_prec_x(ListaDiElementi* l, int z, int x)
 {
     ListaDiElementi nuovo = malloc(sizeof(ElementoDiLista));
     nuovo->info = z;
-    
+
     if((*l)->info == x)//   wtf WTF why
     {
         nuovo->next = *l;
@@ -63,6 +64,10 @@ void add_prec_x(ListaDiElementi* l, int z, int x)
     {
         ListaDiElementi corr = malloc(sizeof(ElementoDiLista));
 
+        //fare il duplicato
+        corr->next = *l;
+
+        //il valore del successivo
         while((corr->next)->info != x)
             corr = corr->next;
         
@@ -75,19 +80,26 @@ void printLista(ListaDiElementi l)
 {
     if(l != NULL)
     {
-        printf("%d\n", l->info);
+        printf(" -> %d", l->info);
         //printf("%p\n", l->next);
         printLista(l->next);
     }
     else
-        printf("NULL\n");
+        printf("\n-----\n"); //NULL
 
 }
 
 int main()
 {
     //dichiarazione variabile
-    ListaDiElementi lista = NULL;
+    ListaDiElementi lista = malloc(sizeof(ListaDiElementi));
+
+    lista->next = NULL;
+    lista->info = 420;
+
+    printLista(lista);
+
+    add_prec_x(&lista, 47, 420);
 
     //alloco memoria nello heap
     //lista = malloc(sizeof(ListaDiElementi));
@@ -99,7 +111,7 @@ int main()
     }
     printLista(lista);
 
-    add_prec_x(&lista, 69, 5);
+    add_prec_x(&lista, 69, 4);
     printLista(lista);
 
 
