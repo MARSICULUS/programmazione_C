@@ -15,7 +15,7 @@ typedef struct elemento ElementoDiLista;
 typedef ElementoDiLista* ListaDiElementi;
 
 //-------------------------\
-//    pene                  |
+//                          |
 //-------------------------/
 
 //aggiungere un elemento in testa a una lista
@@ -88,6 +88,10 @@ void printLista(ListaDiElementi l)
         printf("\n-----\n"); //NULL
 
 }
+
+//trova nella lista
+
+//elimina duplicati :(
 
 int main()
 {
