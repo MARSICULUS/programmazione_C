@@ -27,6 +27,7 @@ void addT(ListaDiElementi* testa, int x)
     *testa = nuovo;
 }
 
+//aggiungere un elemento i coda
 void addC(ListaDiElementi *l, int z)
 {
     ListaDiElementi nuovo = malloc(sizeof(ElementoDiLista));
@@ -74,8 +75,10 @@ void add_prec_x(ListaDiElementi* l, int z, int x)
         nuovo->next = corr->next;
         corr->next = nuovo;
     }
+
 }
 
+//print lista
 void printLista(ListaDiElementi l)
 {
     if(l != NULL)
@@ -90,8 +93,52 @@ void printLista(ListaDiElementi l)
 }
 
 //trova nella lista
+int find_in_lista(ListaDiElementi* l, int x)
+{
+    int trovato = 0;
+
+    ListaDiElementi corr;//serve o no fare la malloc???
+    corr = *l;
+
+    while(!trovato && corr->next != NULL)
+    {
+        //printf("%d    %d\n", corr->info, trovato);
+        if(corr->info == x)
+            trovato = 1;
+        else
+            corr = corr->next;
+    }
+
+    return trovato;
+}
+
+//eliminare elemento
+void eliminare_x(ListaDiElementi* l, int x)
+{
+    ListaDiElementi corr;//serve o no fare la malloc???
+    corr = *l;
+
+    while((corr->next)->info != x)
+        corr = corr->next;
+
+    corr->next = (corr->next)->next;
+}
+
+//da array a lista
+ListaDiElementi lista_da_array(int arr[], int dim)
+{
+    ListaDiElementi lista = malloc(sizeof(ListaDiElementi));
+    lista->next = NULL;
+
+    for(int i = 0; i < 0; i++)
+        addC(&lista, arr[i]);
+
+    return lista;
+}
 
 //elimina duplicati :(
+
+
 
 int main()
 {
@@ -101,7 +148,7 @@ int main()
     lista->next = NULL;
     lista->info = 420;
 
-    printLista(lista);
+    //printLista(lista);
 
     add_prec_x(&lista, 47, 420);
 
@@ -113,11 +160,30 @@ int main()
     {
         addC(&lista, i);
     }
-    printLista(lista);
+    //printLista(lista);
 
-    add_prec_x(&lista, 69, 4);
-    printLista(lista);
+    //esercizio 03 esercitazione
+    ListaDiElementi dog = malloc(sizeof(ListaDiElementi));
+ 
+    int n;
+    int elem;
 
+    printf("Inserire lunghezza array: ");
+    scanf("%d", &n);
+
+    for(int i=0; i<n; i++)
+    {
+        printf("inserire elemento %d:", i + 1);
+        scanf("%d", &elem);
+        addC(&dog, elem);
+        printLista(dog);
+    }
+
+    printLista(dog);
+
+
+    eliminare_x(&dog, 69);
+    printLista;
 
     return 0;
 }
